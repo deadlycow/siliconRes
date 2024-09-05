@@ -199,6 +199,7 @@ section .showcase-container {
       display: flex;
       align-items: center;
       justify-content: center;
+      @include btn-more-shadow;
     }
 
     .btn-discover-more-text {
@@ -295,6 +296,10 @@ section .showcase-container {
 }
 
 @media (min-width: 1280px) {
+  .bg-gradient {
+    box-shadow: none;
+    border-bottom: 1px solid black;
+  }
   .custom-padding {
     padding-top: 1rem;
   }
@@ -323,5 +328,62 @@ section .showcase-container {
     max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
+    text-align: start;
+    padding-top: 7rem;
+
+
+    display: grid;
+    grid-template-columns: 530px 1fr 1fr;
+    grid-template-rows: auto;
+
+    .showcase-header {
+      grid-column: 1 / 2;
+      grid-row: 1;
+      max-width: none;
+      justify-self: none;
+      font-size: $fs-D4;
+      padding-block: 2.25rem 0;
+    }
+
+    .showcase-text {
+      grid-column: 1 / 2;
+      grid-row: 2;
+      padding-top: 1.5rem;
+      padding-bottom: 3rem;
+    }
+
+    .btn-store-container {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      padding-top: 0rem;
+      gap: 1.5rem;
+
+      .store-links {
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    div {
+      grid-column: 2 / 4;
+      grid-row: 1 / 6;
+
+      .showcase-container-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .btn-discover-more {
+      grid-column: 1/2;
+      grid-row: 5/6;
+      padding-bottom: 4rem;
+    }
   }
 }
