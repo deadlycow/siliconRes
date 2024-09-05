@@ -187,6 +187,9 @@ section .features-container .grid-features {
   column-gap: 1.5rem;
   row-gap: 2rem;
 }
+section .features-container .grid-features .features-side-img {
+  display: none;
+}
 section .features-container .grid-features .features-header {
   font-size: 1.75rem;
   font-weight: var(--fw-extrabold);
@@ -403,66 +406,44 @@ section .features-container .grid-features .features-item p {
     max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 3rem;
+    padding-top: 6rem;
   }
   section .features-container .grid-logos {
-    display: grid;
     grid-template-columns: repeat(6, auto);
-    column-gap: 1.5rem;
-  }
-  section .features-container .grid-logos .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--color-divider-border-300);
-    border-radius: 8px;
-    padding: 2.344rem 1.719rem;
-  }
-  section .features-container .grid-logos .logo-container img {
-    width: 100%;
-    height: 100%;
   }
   section .features-container .grid-features {
-    padding-block: 3.875rem 2.75rem;
-    display: grid;
-    grid-template-columns: 60px 1fr;
+    padding-block: 7rem;
+    grid-template-columns: auto 60px auto 60px auto;
     grid-template-rows: auto;
-    column-gap: 1.5rem;
-    row-gap: 2rem;
+    column-gap: 2rem;
+    row-gap: 0.875rem;
+  }
+  section .features-container .grid-features .features-side-img {
+    display: block;
+    grid-column: 1/2;
+    grid-row: 1/7;
+    padding-right: 150px;
   }
   section .features-container .grid-features .features-header {
-    font-size: 1.75rem;
-    font-weight: var(--fw-extrabold);
-    text-align: center;
-    color: var(--color-darkmode);
-    grid-column: 1/-1;
+    font-size: 2.5rem;
+    text-align: left;
+    color: var(--color-heading-900);
+    grid-column: 2/-1;
   }
   section .features-container .grid-features .features-header-text {
-    font-size: 1.125rem;
-    text-align: center;
-    color: var(--color-body-text-notinlist);
-    grid-column: 1/-1;
+    text-align: left;
+    color: var(--color-muted-text-600);
+    grid-column: 2/-1;
     grid-row: 2;
-  }
-  section .features-container .grid-features .icon-container {
-    width: 60px;
-    height: 60px;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--color-bg-100);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-bottom: 3.3rem;
   }
   section .features-container .grid-features .features-item h3 {
-    font-size: 1.25rem;
-    font-weight: var(--fw-extrabold);
-    color: var(--color-darkmode);
+    color: var(--color-heading-900);
     padding-bottom: 0.75rem;
   }
   section .features-container .grid-features .features-item p {
-    font-size: 1rem;
-    color: var(--color-body-text-notinlist);
+    color: var(--color-body-text-700);
+    padding-bottom: 2.125rem;
   }
   section .features-container .grid-logos > .logo-container:nth-last-of-type(-n+2) {
     display: flex;
