@@ -4,13 +4,20 @@
   --color-heading-900: #0B0F19;
   --color-navigation-800: #33354D;
   --color-body-text-700: #565973;
+  --color-body-text-notinlist: #585C7B;
   --color-muted-text-600: #9397AD;
   --color-bg-100: #F3F6FF;
   --color-white: #FFF;
+  --color-darkmode: #131022;
+  --color-btn-more: var(--color-white);
+  --gradient-color-1: #6366F11A;
+  --gradient-color-2: #DA46EF0D;
+  --gradient-color-3: #F1F4FD12;
   --fw-extrabold: 800;
   --fw-bold: 700;
   --fw-semibold: 600;
   --fw-medium: 500;
+  --cpd-075: .75rem;
 }
 
 * {
@@ -26,34 +33,54 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  background-color: var(--color-bg-100);
+  background-color: var(--color-white);
 }
 
 a {
   text-decoration: none;
 }
 
-.container {
-  padding-left: 30px;
+#break {
+  display: none;
 }
 
-.navbar a {
+.bg-gradient {
+  background-image: radial-gradient(circle at 50% 100%, var(--gradient-color-1) 0%, var(--gradient-color-2) 42%, var(--gradient-color-3) 83%);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2509803922);
+}
+
+.custom-padding {
+  padding-inline: var(--cpd-075);
+  padding-top: 0.75rem;
+}
+
+header .container {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+header .container .navbar {
+  display: none;
+}
+header .container .navbar a {
   font-size: 1rem;
   font-weight: var(--fw-semibold);
   color: var(--color-navigation-800);
 }
-
-.btn-dark-mode {
+header .container .btn-dark-mode {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-.btn-dark-mode .label {
+header .container .btn-dark-mode .label {
   font-size: 1rem;
   font-weight: var(--fw-semibold);
-  color: var(--color-body-text-700);
+  color: var(--color-darkmode);
+  display: none;
 }
-.btn-dark-mode .dark-mode-bg {
+header .container .btn-dark-mode .dark-mode-bg {
+  box-shadow: 0 8px 18px -8px rgba(99, 102, 241, 0.9019607843);
   background-color: var(--color-muted-text-600);
   display: inline-block;
   position: relative;
@@ -61,7 +88,7 @@ a {
   height: 24px;
   border-radius: 12px;
 }
-.btn-dark-mode .dark-mode-bg .slider {
+header .container .btn-dark-mode .dark-mode-bg .slider {
   position: absolute;
   top: 2px;
   left: 2px;
@@ -71,23 +98,166 @@ a {
   content: "";
   background-color: var(--color-white);
 }
-
-.btn-sign-in-up {
+header .container .btn-sign-in-up {
   background-color: var(--color-primary);
   padding: 9px 20px;
   border-radius: 4px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   gap: 12px;
 }
-.btn-sign-in-up span {
+header .container .btn-sign-in-up span {
   color: var(--color-white);
   font-size: 0.875rem;
   font-weight: var(--fw-semibold);
 }
-
-.btn-menu {
+header .container .btn-menu {
   background-color: transparent;
   border: none;
+  height: 36px;
+}
+
+section .showcase-container {
+  padding-inline: var(--cpd-075);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+section .showcase-container .showcase-header {
+  font-size: 2.25rem;
+  font-weight: var(--fw-extrabold);
+  color: var(--color-heading-900);
+  padding-block: 1.625rem 2.5rem;
+}
+section .showcase-container .showcase-text {
+  font-size: 1.125rem;
+  color: var(--color-body-text-notinlist);
+  padding-bottom: 2.5rem;
+}
+section .showcase-container .btn-store-container {
+  display: grid;
+  gap: 1rem;
+}
+section .showcase-container .btn-store-container .store-links {
+  background-color: var(--color-darkmode);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+section .showcase-container .showcase-container-img {
+  display: none;
+}
+section .showcase-container .btn-discover-more {
+  display: flex;
+  align-items: center;
+  gap: 1.375rem;
+  padding-block: 2.125rem 1.875rem;
+  align-self: center;
+}
+section .showcase-container .btn-discover-more .btn-discover-more-bg {
+  background-color: var(--color-btn-more);
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section .showcase-container .btn-discover-more .btn-discover-more-text {
+  color: var(--color-navigation-800);
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  #break {
+    display: block;
+  }
+  .custom-padding {
+    padding-top: 1.25rem;
+  }
+  header .container {
+    gap: 4.5rem;
+    max-width: 710px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header .container .btn-dark-mode .label {
+    display: block;
+  }
+  section .showcase-container {
+    max-width: 710px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 276px 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  section .showcase-container .showcase-header {
+    grid-column: 1/-1;
+    max-width: 400px;
+    justify-self: center;
+    font-size: 2.75rem;
+    padding-block: 3rem 1.875rem;
+  }
+  section .showcase-container .showcase-text {
+    grid-column: 1/2;
+    grid-row: 2;
+    text-align: start;
+    padding-top: 6rem;
+    padding-bottom: 0;
+  }
+  section .showcase-container .btn-store-container {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2.5rem;
+  }
+  section .showcase-container .btn-store-container .store-links img {
+    width: 100%;
+    height: 100%;
+  }
+  section .showcase-container div {
+    grid-column: 2/4;
+    grid-row: 2/5;
+  }
+  section .showcase-container div .showcase-container-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  section .showcase-container .btn-discover-more {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+}
+@media (min-width: 1280px) {
+  .custom-padding {
+    padding-top: 1rem;
+  }
+  header .container {
+    grid-template-columns: auto 1fr auto auto;
+    gap: 2rem;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header .container .navbar {
+    display: block;
+  }
+  header .container .btn-sign-in-up {
+    display: block;
+  }
+  header .container .btn-menu {
+    display: none;
+  }
+  section .showcase-container {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
