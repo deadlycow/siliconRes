@@ -172,6 +172,50 @@ section .showcase-container .btn-discover-more .btn-discover-more-text {
   font-size: 0.875rem;
 }
 
+section .features-container {
+  padding-inline: var(--cpd-075);
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  grid-template-rows: auto;
+  column-gap: 1.5rem;
+  row-gap: 2rem;
+}
+section .features-container .features-header {
+  font-size: 1.75rem;
+  font-weight: var(--fw-extrabold);
+  text-align: center;
+  color: var(--color-darkmode);
+  grid-column: 1/-1;
+}
+section .features-container .features-header-text {
+  font-size: 1.125rem;
+  text-align: center;
+  color: var(--color-body-text-notinlist);
+  grid-column: 1/-1;
+  grid-row: 2;
+}
+section .features-container .icon-container {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-bg-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section .features-container .features-item h3 {
+  font-size: 1.25rem;
+  font-weight: var(--fw-extrabold);
+  color: var(--color-darkmode);
+  padding-bottom: 0.75rem;
+}
+section .features-container .features-item p {
+  font-size: 1rem;
+  color: var(--color-body-text-notinlist);
+}
+
 @media (min-width: 768px) {
   #break {
     display: block;
