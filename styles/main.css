@@ -174,7 +174,7 @@ section .showcase-container .btn-discover-more .btn-discover-more-text {
 
 section .features-container {
   padding-inline: var(--cpd-075);
-  padding-top: 2rem;
+  padding-block: 2rem 2.75rem;
   display: grid;
   grid-template-columns: 60px 1fr;
   grid-template-rows: auto;

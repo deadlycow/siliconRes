@@ -211,7 +211,7 @@ section .showcase-container {
 
 section .features-container {
   padding-inline: var(--cpd-075);
-  padding-top: 2rem;
+  padding-block: 2rem 2.75rem;
 
   display: grid;
   grid-template-columns: 60px 1fr;
@@ -224,7 +224,6 @@ section .features-container {
     font-weight: var(--fw-extrabold);
     text-align: center;
     color: var(--color-darkmode);
-    // padding-block: 2.375rem 0;
     grid-column: 1 / -1;
   }
 
