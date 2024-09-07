@@ -581,7 +581,7 @@ section .faq-container .faq-subscribe-container div button {
     margin-right: auto;
   }
   section .faq-container .faq-grid {
-    padding-block: 3.188rem 2.125rem;
+    padding-block: 3.188rem 1.813rem;
   }
   section .faq-container .faq-grid .faq-header {
     font-size: 2rem;
@@ -630,58 +630,51 @@ section .faq-container .faq-subscribe-container div button {
     display: none;
   }
   section .faq-container .faq-grid .contact-grid {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+    padding-top: 2.125rem;
   }
-  section .faq-container .faq-subscribe-container {
+  section .faq-container .faq-grid .contact-grid .call-contact,
+  section .faq-container .faq-grid .contact-grid .message-contact {
     display: flex;
     flex-direction: column;
-    gap: 2.375rem;
-    background-color: var(--color-bg-100);
+    border: 1px solid var(--color-divider-border-300);
     border-radius: 0.5rem;
-    padding: 3.125rem 0.75rem 2.056rem 0.75rem;
+    gap: 1.125rem;
+    padding: 1.5rem;
   }
-  section .faq-container .faq-subscribe-container div {
+  section .faq-container .faq-grid .contact-grid .call-contact p,
+  section .faq-container .faq-grid .contact-grid .message-contact p {
+    font-size: 0.875rem;
+    color: var(--color-body-text-700);
+  }
+  section .faq-container .faq-grid .contact-grid .call-contact a,
+  section .faq-container .faq-grid .contact-grid .message-contact a {
+    font-size: 0.875rem;
+    font-weight: var(--fw-semibold);
     display: flex;
     align-items: center;
+    gap: 0.5rem;
   }
-  section .faq-container .faq-subscribe-container div h2 {
-    font-size: 1.35rem;
-    font-weight: var(--fw-extrabold);
-    color: var(--color-darkmode);
-    padding-left: 1rem;
+  section .faq-container .faq-grid .contact-grid .call-contact a {
+    color: var(--color-primary);
   }
-  section .faq-container .faq-subscribe-container div .input-container {
-    position: relative;
-    flex: 1;
+  section .faq-container .faq-grid .contact-grid .message-contact a {
+    color: var(--color-success);
   }
-  section .faq-container .faq-subscribe-container div .input-container img {
-    position: absolute;
-    left: 24px;
-    transform: translateX(-50%);
+  section .faq-container .faq-subscribe-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+    padding: 4.531rem 1.5rem;
   }
-  section .faq-container .faq-subscribe-container div .input-container input {
-    padding: 1rem 0 1rem 3rem;
-    border-top: 1px solid var(--color-forms-border-400);
-    border-left: 1px solid var(--color-forms-border-400);
-    border-bottom: 1px solid var(--color-forms-border-400);
-    border-right: none;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-    font-size: 1rem;
-    min-width: 0;
-    width: 100%;
+  .footer-p {
+    padding-block: 1.25rem;
+    font-size: 0.875rem;
   }
-  section .faq-container .faq-subscribe-container div .input-container input::placeholder {
-    color: var(--color-input-placeholder-500);
-    font-size: 1rem;
-  }
-  section .faq-container .faq-subscribe-container div button {
-    font-size: 1rem;
-    font-weight: var(--fw-semibold);
-    padding: 0.87rem 1.156rem;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border: 1px solid var(--color-primary);
+  .footer-p br {
+    display: none;
   }
 }
 @media (min-width: 1280px) {

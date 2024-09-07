@@ -438,6 +438,7 @@ section .faq-container {
       margin-top: 3.594rem;
       font-weight: var(--fw-semibold);
     }
+
     .contact-grid {
       display: none;
     }
@@ -699,7 +700,7 @@ section .faq-container {
 
 
     .faq-grid {
-      padding-block: 3.188rem 2.125rem;
+      padding-block: 3.188rem 1.813rem;
 
       .faq-header {
         font-size: $fs-H2;
@@ -764,70 +765,64 @@ section .faq-container {
       }
 
       .contact-grid {
-        display: block;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.5rem;
+        padding-top: 2.125rem;
+
+        .call-contact,
+        .message-contact {
+          display: flex;
+          flex-direction: column;
+          border: 1px solid var(--color-divider-border-300);
+          border-radius: .5rem;
+          gap: 1.125rem;
+          padding: 1.5rem;
+
+          p {
+            font-size: $fs-S;
+            color: var(--color-body-text-700);
+          }
+
+          a {
+            font-size: $fs-S;
+            font-weight: var(--fw-semibold);
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+          }
+        }
+
+        .call-contact {
+          a {
+            color: var(--color-primary);
+          }
+        }
+
+        .message-contact {
+          a {
+            color: var(--color-success);
+          }
+        }
       }
     }
 
     .faq-subscribe-container {
-      display: flex;
-      flex-direction: column;
-      gap: 2.375rem;
-      background-color: var(--color-bg-100);
-      border-radius: .5rem;
-      padding: 3.125rem .75rem 2.056rem .75rem;
-
-      div {
-        display: flex;
-        align-items: center;
-
-        h2 {
-          font-size: $fs-H45;
-          font-weight: var(--fw-extrabold);
-          color: var(--color-darkmode);
-          padding-left: 1rem;
-        }
-
-        .input-container {
-          position: relative;
-          flex: 1;
-
-          img {
-            position: absolute;
-            left: 24px;
-            transform: translateX(-50%);
-          }
-
-          input {
-            padding: 1rem 0 1rem 3rem;
-            border-top: 1px solid var(--color-forms-border-400);
-            border-left: 1px solid var(--color-forms-border-400);
-            border-bottom: 1px solid var(--color-forms-border-400);
-            border-right: none;
-            border-top-left-radius: .5rem;
-            border-bottom-left-radius: .5rem;
-            font-size: $fs-M; // this creates problem on mobile (btn overflow)
-            min-width: 0; // this fixes it 
-            width: 100%; // and this
-          }
-
-          input::placeholder {
-            color: var(--color-input-placeholder-500);
-            font-size: $fs-M;
-          }
-        }
-
-        button {
-          font-size: $fs-M;
-          font-weight: var(--fw-semibold);
-          padding: .87rem 1.156rem;
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-          border: 1px solid var(--color-primary);
-        }
-      }
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1.5rem;
+      padding: 4.531rem 1.5rem;
     }
   }
 
+  .footer-p {
+    padding-block: 1.25rem;
+    font-size: $fs-S;
+
+    br {
+      display: none;
+    }
+  }
 
 
 }
