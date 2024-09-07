@@ -973,6 +973,19 @@ section .faq-container .faq-subscribe-container div button {
     background-color: var(--color-white);
     border-radius: 0.5rem;
     box-shadow: 0 4.4px 12px -1px rgba(19, 16, 34, 0.0588235294), 0 2px 6.4px -1px rgba(19, 16, 34, 0.031372549);
+    position: relative;
+  }
+  .customer-feedback .card .quotes {
+    position: absolute;
+    background-color: var(--color-primary);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    top: -25px;
+    box-shadow: 0 8px 18px -8px rgba(99, 102, 241, 0.9019607843);
   }
   .customer-feedback .card .star-container {
     display: flex;

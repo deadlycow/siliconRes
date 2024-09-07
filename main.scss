@@ -1190,6 +1190,20 @@ section .faq-container {
       background-color: var(--color-white);
       border-radius: .5rem;
       @include faq-shadow;
+      position: relative;
+
+      .quotes {
+        position: absolute;
+        background-color: var(--color-primary);
+        border-radius: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        top: -25px;
+        @include toggle;
+      }
 
       .star-container {
         display: flex;
