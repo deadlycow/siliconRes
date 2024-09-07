@@ -18,6 +18,9 @@
   --color-success: #22C55E;
   --color-btn-more: var(--color-white);
 
+  // special
+  --bg-btn-darkmode: var(--color-muted-text-600);
+
   // background-color gradient 
   --gradient-color-1: #6366F11A;
   --gradient-color-2: #DA46EF0D;
@@ -31,13 +34,23 @@
 
   // custom padding
   --cpd-075: .75rem;
+
+  img[src*="light"] {display: block;}
+  img[src*="dark"] {display: none;}
 }
 
 [theme="dark"] {
-  // --bg-color-mobile-btn: #EFF2FC;
+  --color-bg-100: #131022;
+  --color-darkmode: var(--color-white);
+  --color-body-text-notinlist: var(--color-white);
+  --color-btn-more: #FFFFFF0D;
   // --bg-color: #0B0F19;
   // --btn-bg-color: #ffffff0D;
   // img[src*="light"] {display: none};
+  --bg-btn-darkmode: var(--color-primary);
+  img[src*="dark"] {display: block;}
+  img[src*="light"] {display: none;}
+  
 }
 
 * {
@@ -129,7 +142,7 @@ header .container {
 
     .dark-mode-bg {
       @include toggle;
-      background-color: var(--color-muted-text-600);
+      background-color: var(--bg-btn-darkmode);
       display: inline-block;
       position: relative;
       width: 46px;
@@ -1042,132 +1055,6 @@ section .faq-container {
     display: block;
   }
 
-  section .faq-container {
-    max-width: 1300px;
-
-    .faq-grid {
-      padding-block: 7rem;
-      grid-template-columns: 420px 1fr;
-      grid-template-rows: auto;
-      column-gap: 8.375rem;
-
-      .faq-header {
-        text-align: left;
-        margin: 0;
-      }
-
-      .faq-header-sub {
-        padding-bottom: 2.5rem;
-        text-align: left;
-      }
-
-      .faq-question-container {
-        grid-column: 2 / 3;
-        grid-row: 1 / 8;
-      }
-
-      .contact-grid {
-        padding-top: 0;
-      }
-    }
-
-    .faq-subscribe-container {
-      padding: 4.5rem 6.875rem;
-      column-gap: 0;
-
-      div {
-        h2 {
-          font-size: $fs-H4;
-          color: var(--color-heading-900);
-          padding-left: 2rem;
-
-          #extra-text-laptop {
-            display: inline;
-          }
-        }
-
-        .input-container {
-          margin-left: 4.5rem;
-        }
-      }
-    }
-  }
-
-  .footer-p {
-    padding-block: 3.375rem;
-  }
-
-
-
-  section .technical-info {
-    max-width: 1300px;
-    margin-inline: auto;
-    padding-block: 7rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 5rem;
-    max-width: 1076px;
-    margin-inline: auto;
-
-    .top-left {
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
-
-      h2 {
-        font-size: $fs-H2;
-        font-weight: var(--fw-extrabold);
-        color: var(--color-heading-900);
-        padding-block: 6.25rem 1rem;
-      }
-      
-      .info-item {
-        display: flex;
-        align-items: center;
-        gap: .5rem;
-
-        p {
-          color: var(--color-body-text-700);
-        }
-      }
-    }
-
-    .bottom-right {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-
-      h2 {
-        font-size: $fs-H2;
-        font-weight: var(--fw-extrabold);
-        color: var(--color-heading-900);
-      }
-
-      .bottom-right-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 2.5rem;
-        row-gap: 1rem;
-
-        div {
-          background-color: var(--color-bg-100);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 60px;
-          height: 60px;
-          border-radius: .5rem;
-        }
-
-        p {
-          color: var(--color-body-text-700);
-        }
-      }
-    }
-
-
-  }
-
   .customer-feedback {
     max-width: 1300px;
     margin-inline: auto;
@@ -1225,7 +1112,7 @@ section .faq-container {
           display: flex;
           flex-direction: column;
           gap: .125rem;
-          
+
           span {
             font-weight: var(--fw-bold);
             color: var(--color-heading-900);
@@ -1241,5 +1128,128 @@ section .faq-container {
 
   }
 
+  section .technical-info {
+    max-width: 1300px;
+    margin-inline: auto;
+    padding-block: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 5rem;
+    max-width: 1076px;
+    margin-inline: auto;
+
+    .top-left {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+
+      h2 {
+        font-size: $fs-H2;
+        font-weight: var(--fw-extrabold);
+        color: var(--color-heading-900);
+        padding-block: 6.25rem 1rem;
+      }
+
+      .info-item {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        p {
+          color: var(--color-body-text-700);
+        }
+      }
+    }
+
+    .bottom-right {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+
+      h2 {
+        font-size: $fs-H2;
+        font-weight: var(--fw-extrabold);
+        color: var(--color-heading-900);
+      }
+
+      .bottom-right-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2.5rem;
+        row-gap: 1rem;
+
+        div {
+          background-color: var(--color-bg-100);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 60px;
+          height: 60px;
+          border-radius: .5rem;
+        }
+
+        p {
+          color: var(--color-body-text-700);
+        }
+      }
+    }
+
+
+  }
+
+  section .faq-container {
+    max-width: 1300px;
+
+    .faq-grid {
+      padding-block: 7rem;
+      grid-template-columns: 420px 1fr;
+      grid-template-rows: auto;
+      column-gap: 8.375rem;
+
+      .faq-header {
+        text-align: left;
+        margin: 0;
+      }
+
+      .faq-header-sub {
+        padding-bottom: 2.5rem;
+        text-align: left;
+      }
+
+      .faq-question-container {
+        grid-column: 2 / 3;
+        grid-row: 1 / 8;
+      }
+
+      .contact-grid {
+        padding-top: 0;
+      }
+    }
+
+    .faq-subscribe-container {
+      padding: 4.5rem 6.875rem;
+      column-gap: 0;
+
+      div {
+        h2 {
+          font-size: $fs-H4;
+          color: var(--color-heading-900);
+          padding-left: 2rem;
+
+          #extra-text-laptop {
+            display: inline;
+          }
+        }
+
+        .input-container {
+          margin-left: 4.5rem;
+        }
+      }
+    }
+  }
+
+  .footer-p {
+    padding-block: 3.375rem;
+  }
 
 }

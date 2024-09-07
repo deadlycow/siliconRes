@@ -14,6 +14,7 @@
   --color-darkmode: #131022;
   --color-success: #22C55E;
   --color-btn-more: var(--color-white);
+  --bg-btn-darkmode: var(--color-muted-text-600);
   --gradient-color-1: #6366F11A;
   --gradient-color-2: #DA46EF0D;
   --gradient-color-3: #F1F4FD12;
@@ -22,6 +23,26 @@
   --fw-semibold: 600;
   --fw-medium: 500;
   --cpd-075: .75rem;
+}
+:root img[src*=light] {
+  display: block;
+}
+:root img[src*=dark] {
+  display: none;
+}
+
+[theme=dark] {
+  --color-bg-100: #131022;
+  --color-darkmode: var(--color-white);
+  --color-body-text-notinlist: var(--color-white);
+  --color-btn-more: #FFFFFF0D;
+  --bg-btn-darkmode: var(--color-primary);
+}
+[theme=dark] img[src*=dark] {
+  display: block;
+}
+[theme=dark] img[src*=light] {
+  display: none;
 }
 
 * {
@@ -108,7 +129,7 @@ header .container .btn-dark-mode .label {
 }
 header .container .btn-dark-mode .dark-mode-bg {
   box-shadow: 0 8px 18px -8px rgba(99, 102, 241, 0.9019607843);
-  background-color: var(--color-muted-text-600);
+  background-color: var(--bg-btn-darkmode);
   display: inline-block;
   position: relative;
   width: 46px;
@@ -853,105 +874,6 @@ section .faq-container .faq-subscribe-container div button {
   .laptop-only {
     display: block;
   }
-  section .faq-container {
-    max-width: 1300px;
-  }
-  section .faq-container .faq-grid {
-    padding-block: 7rem;
-    grid-template-columns: 420px 1fr;
-    grid-template-rows: auto;
-    column-gap: 8.375rem;
-  }
-  section .faq-container .faq-grid .faq-header {
-    text-align: left;
-    margin: 0;
-  }
-  section .faq-container .faq-grid .faq-header-sub {
-    padding-bottom: 2.5rem;
-    text-align: left;
-  }
-  section .faq-container .faq-grid .faq-question-container {
-    grid-column: 2/3;
-    grid-row: 1/8;
-  }
-  section .faq-container .faq-grid .contact-grid {
-    padding-top: 0;
-  }
-  section .faq-container .faq-subscribe-container {
-    padding: 4.5rem 6.875rem;
-    column-gap: 0;
-  }
-  section .faq-container .faq-subscribe-container div h2 {
-    font-size: 1.5rem;
-    color: var(--color-heading-900);
-    padding-left: 2rem;
-  }
-  section .faq-container .faq-subscribe-container div h2 #extra-text-laptop {
-    display: inline;
-  }
-  section .faq-container .faq-subscribe-container div .input-container {
-    margin-left: 4.5rem;
-  }
-  .footer-p {
-    padding-block: 3.375rem;
-  }
-  section .technical-info {
-    max-width: 1300px;
-    margin-inline: auto;
-    padding-block: 7rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 5rem;
-    max-width: 1076px;
-    margin-inline: auto;
-  }
-  section .technical-info .top-left {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  section .technical-info .top-left h2 {
-    font-size: 2rem;
-    font-weight: var(--fw-extrabold);
-    color: var(--color-heading-900);
-    padding-block: 6.25rem 1rem;
-  }
-  section .technical-info .top-left .info-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  section .technical-info .top-left .info-item p {
-    color: var(--color-body-text-700);
-  }
-  section .technical-info .bottom-right {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-  section .technical-info .bottom-right h2 {
-    font-size: 2rem;
-    font-weight: var(--fw-extrabold);
-    color: var(--color-heading-900);
-  }
-  section .technical-info .bottom-right .bottom-right-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 2.5rem;
-    row-gap: 1rem;
-  }
-  section .technical-info .bottom-right .bottom-right-grid div {
-    background-color: var(--color-bg-100);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 0.5rem;
-  }
-  section .technical-info .bottom-right .bottom-right-grid p {
-    color: var(--color-body-text-700);
-  }
   .customer-feedback {
     max-width: 1300px;
     margin-inline: auto;
@@ -1013,5 +935,104 @@ section .faq-container .faq-subscribe-container div button {
   .customer-feedback .card .user .user-information p {
     font-size: 0.875rem;
     color: var(--color-muted-text-600);
+  }
+  section .technical-info {
+    max-width: 1300px;
+    margin-inline: auto;
+    padding-block: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 5rem;
+    max-width: 1076px;
+    margin-inline: auto;
+  }
+  section .technical-info .top-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  section .technical-info .top-left h2 {
+    font-size: 2rem;
+    font-weight: var(--fw-extrabold);
+    color: var(--color-heading-900);
+    padding-block: 6.25rem 1rem;
+  }
+  section .technical-info .top-left .info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  section .technical-info .top-left .info-item p {
+    color: var(--color-body-text-700);
+  }
+  section .technical-info .bottom-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  section .technical-info .bottom-right h2 {
+    font-size: 2rem;
+    font-weight: var(--fw-extrabold);
+    color: var(--color-heading-900);
+  }
+  section .technical-info .bottom-right .bottom-right-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.5rem;
+    row-gap: 1rem;
+  }
+  section .technical-info .bottom-right .bottom-right-grid div {
+    background-color: var(--color-bg-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 0.5rem;
+  }
+  section .technical-info .bottom-right .bottom-right-grid p {
+    color: var(--color-body-text-700);
+  }
+  section .faq-container {
+    max-width: 1300px;
+  }
+  section .faq-container .faq-grid {
+    padding-block: 7rem;
+    grid-template-columns: 420px 1fr;
+    grid-template-rows: auto;
+    column-gap: 8.375rem;
+  }
+  section .faq-container .faq-grid .faq-header {
+    text-align: left;
+    margin: 0;
+  }
+  section .faq-container .faq-grid .faq-header-sub {
+    padding-bottom: 2.5rem;
+    text-align: left;
+  }
+  section .faq-container .faq-grid .faq-question-container {
+    grid-column: 2/3;
+    grid-row: 1/8;
+  }
+  section .faq-container .faq-grid .contact-grid {
+    padding-top: 0;
+  }
+  section .faq-container .faq-subscribe-container {
+    padding: 4.5rem 6.875rem;
+    column-gap: 0;
+  }
+  section .faq-container .faq-subscribe-container div h2 {
+    font-size: 1.5rem;
+    color: var(--color-heading-900);
+    padding-left: 2rem;
+  }
+  section .faq-container .faq-subscribe-container div h2 #extra-text-laptop {
+    display: inline;
+  }
+  section .faq-container .faq-subscribe-container div .input-container {
+    margin-left: 4.5rem;
+  }
+  .footer-p {
+    padding-block: 3.375rem;
   }
 }
