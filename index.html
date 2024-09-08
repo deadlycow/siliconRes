@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" theme="dark">
+<html lang="en" theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -23,8 +23,9 @@
 
         <div class="btn-dark-mode">
           <span class="label">Dark Mode</span>
-          <label for="" class="dark-mode-bg">
-            <span class="slider"></span>
+          <label class="switch">
+            <input id="dark" type="checkbox" onclick="switchTheme();">
+            <span class="slider round"></span>
           </label>
         </div>
 
@@ -500,6 +501,19 @@
     <p class="footer-p">© 2024 Silicon. All rights reserved. <br>
       Credit MadrasThemes</p>
   </footer>
+
+  <script>
+     function switchTheme() {
+      let theme = document.getElementById('dark').checked;
+
+      if (theme) {
+        document.documentElement.setAttribute('theme', 'dark');
+      }
+      else {
+        document.documentElement.setAttribute('theme', 'light');
+      }
+    }
+  </script>
 </body>
 
 </html>

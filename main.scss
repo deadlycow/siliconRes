@@ -24,8 +24,8 @@
   --input-sub-text: var(--color-input-placeholder-500);
 
   // special
-  --bg-btn-darkmode: var(--color-muted-text-600);
   --card-bg: var(--color-white);
+  --color-bg-toggle: var(--color-muted-text-600);
 
   // background-color gradient 
   --gradient-color-1: #6366F11A;
@@ -64,6 +64,7 @@
   --color-darkmode: var(--color-white);
   --color-body-text-notinlist: #FFFFFFB3; // white 70%
 
+  --color-bg-toggle: var(--color-primary);
   --card-bg: var(--logo-white-4);
   --color-btn-more: #FFFFFF0D; // white 5% change
   --logo-white-4: #FFFFFF0A; // white 4%
@@ -74,7 +75,6 @@
 
   --gradient-bg: radial-gradient(circle at 50% 100%, var(--gradient-color-1) 0%, var(--gradient-color-2) 50%, var(--gradient-color-4) 100%);
 
-  --bg-btn-darkmode: var(--color-primary);
   --faq-bg: #131022;
   --border-width: 1px;
 
@@ -173,28 +173,51 @@ header .container {
       font-weight: var(--fw-semibold);
       color: var(--color-solid);
       display: none;
+      // @include toggle;
     }
-
-    .dark-mode-bg {
-      @include toggle;
-      background-color: var(--bg-btn-darkmode);
-      display: inline-block;
+      // Ja knappen är från w3schools, gjorde ett tapert försök. men js är min egna :)
+    .switch {
       position: relative;
+      display: inline-block;
       width: 46px;
-      height: 24px;
-      border-radius: 12px;
+      height: 26px;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
 
       .slider {
         position: absolute;
-        top: 2px;
-        left: 2px;
-        width: 20px;
-        height: 20px;
-        border-radius: 10px;
-        content: "";
-        background-color: var(--color-white);
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--color-bg-toggle);
+        transition: .4s;
+        border-radius: 23px;
       }
 
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 20px;
+      }
+
+      input:checked+.slider {
+        background-color: var(--color-primary);
+      }
+      input:checked+.slider:before {
+        transform: translateX(20px);
+      }
     }
   }
 
