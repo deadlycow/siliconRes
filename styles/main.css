@@ -14,14 +14,23 @@
   --color-darkmode: #131022;
   --color-success: #22C55E;
   --color-btn-more: var(--color-white);
+  --body-bg-color: var(--color-white);
+  --faq-bg: var(--color-white);
+  --color-solid: #565973;
+  --input-sub: var(--color-white);
+  --input-sub-text: var(--color-input-placeholder-500);
   --bg-btn-darkmode: var(--color-muted-text-600);
+  --card-bg: var(--color-white);
   --gradient-color-1: #6366F11A;
   --gradient-color-2: #DA46EF0D;
   --gradient-color-3: #F1F4FD12;
+  --gradient-color-4: #13102203;
+  --gradient-bg: radial-gradient(circle at 50% 100%, var(--gradient-color-1) 0%, var(--gradient-color-2) 42%, var(--gradient-color-3) 83%);
   --fw-extrabold: 800;
   --fw-bold: 700;
   --fw-semibold: 600;
   --fw-medium: 500;
+  --border-with: 0px;
   --cpd-075: .75rem;
 }
 :root img[src*=light] {
@@ -32,11 +41,24 @@
 }
 
 [theme=dark] {
-  --color-bg-100: #131022;
+  --color-heading-900: var(--color-white);
+  --color-navigation-800: var(--color-white);
+  --color-body-text-700: var(--color-white);
+  --color-divider-border-300: #FFFFFF26;
+  --color-bg-100: #FFFFFF0D;
   --color-darkmode: var(--color-white);
-  --color-body-text-notinlist: var(--color-white);
+  --color-body-text-notinlist: #FFFFFFB3;
+  --card-bg: var(--logo-white-4);
   --color-btn-more: #FFFFFF0D;
+  --logo-white-4: #FFFFFF0A;
+  --body-bg-color: #0B0F19;
+  --logo-bg: #131022;
+  --input-sub: var(--logo-white-4);
+  --input-sub-text: var(--color-white);
+  --gradient-bg: radial-gradient(circle at 50% 100%, var(--gradient-color-1) 0%, var(--gradient-color-2) 50%, var(--gradient-color-4) 100%);
   --bg-btn-darkmode: var(--color-primary);
+  --faq-bg: #131022;
+  --border-width: 1px;
 }
 [theme=dark] img[src*=dark] {
   display: block;
@@ -58,7 +80,7 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  background-color: var(--color-white);
+  background-color: var(--body-bg-color);
 }
 
 a {
@@ -71,7 +93,7 @@ a {
 }
 
 .bg-gradient {
-  background-image: radial-gradient(circle at 50% 100%, var(--gradient-color-1) 0%, var(--gradient-color-2) 42%, var(--gradient-color-3) 83%);
+  background-image: var(--gradient-bg);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2509803922);
 }
 
@@ -124,7 +146,7 @@ header .container .btn-dark-mode {
 header .container .btn-dark-mode .label {
   font-size: 1rem;
   font-weight: var(--fw-semibold);
-  color: var(--color-darkmode);
+  color: var(--color-solid);
   display: none;
 }
 header .container .btn-dark-mode .dark-mode-bg {
@@ -175,7 +197,7 @@ section .showcase-container {
 section .showcase-container .showcase-header {
   font-size: 2.25rem;
   font-weight: var(--fw-extrabold);
-  color: var(--color-heading-900);
+  color: var(--color-darkmode);
   padding-block: 1.625rem 2.5rem;
 }
 section .showcase-container .showcase-text {
@@ -349,6 +371,7 @@ section .faq-container .faq-grid .faq-header-sub {
 section .faq-container .faq-grid .faq-question-container {
   display: grid;
   border: 1px solid var(--color-divider-border-300);
+  background-color: var(--faq-bg);
   border-radius: 0.5rem;
 }
 section .faq-container .faq-grid .faq-question-container .faq-question-inner-container {
@@ -546,6 +569,7 @@ section .faq-container .faq-subscribe-container div button {
     align-items: center;
     justify-content: center;
     border: 1px solid var(--color-divider-border-300);
+    background-color: var(--logo-bg);
     border-radius: 8px;
     padding: 2.344rem 1.719rem;
   }
@@ -611,13 +635,13 @@ section .faq-container .faq-subscribe-container div button {
     max-width: 710px;
     margin-left: auto;
     margin-right: auto;
+    --faq-bg: #00000000;
   }
   section .faq-container .faq-grid {
     padding-block: 3.188rem 1.813rem;
   }
   section .faq-container .faq-grid .faq-header {
     font-size: 2rem;
-    color: var(--color-heading-900);
     padding-bottom: 2rem;
   }
   section .faq-container .faq-grid .faq-header-sub {
@@ -633,6 +657,7 @@ section .faq-container .faq-subscribe-container div button {
     padding: 1.125rem 1.5rem;
     box-shadow: 0 4.4px 12px -1px rgba(19, 16, 34, 0.0588235294), 0 2px 6.4px -1px rgba(19, 16, 34, 0.031372549);
     border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.0392156863);
   }
   section .faq-container .faq-grid .faq-question-container .faq-question-inner-container .faq-questions-text {
     color: var(--color-heading-900);
@@ -645,6 +670,7 @@ section .faq-container .faq-subscribe-container div button {
     flex-direction: column;
     align-items: normal;
     gap: 1rem;
+    border: var(--border-width) solid var(--color-divider-border-300);
   }
   section .faq-container .faq-grid .faq-question-container #filler-tablet .first-line {
     display: flex;
@@ -792,6 +818,10 @@ section .faq-container .faq-subscribe-container div button {
   }
   section .features-container .grid-logos {
     grid-template-columns: repeat(6, auto);
+    --logo-bg: #00000000;
+  }
+  section .features-container .grid-logos .logo-container:last-child {
+    background-color: var(--logo-white-4);
   }
   section .features-container .grid-features {
     padding-block: 7rem;
@@ -892,7 +922,7 @@ section .faq-container .faq-subscribe-container div button {
     flex-direction: column;
     padding: 1.5rem;
     gap: 1.5rem;
-    background-color: var(--color-white);
+    background-color: var(--card-bg);
     border-radius: 0.5rem;
     box-shadow: 0 4.4px 12px -1px rgba(19, 16, 34, 0.0588235294), 0 2px 6.4px -1px rgba(19, 16, 34, 0.031372549);
     position: relative;
@@ -1031,6 +1061,10 @@ section .faq-container .faq-subscribe-container div button {
   }
   section .faq-container .faq-subscribe-container div .input-container {
     margin-left: 4.5rem;
+  }
+  section .faq-container .faq-subscribe-container div .input-container input {
+    background-color: var(--input-sub);
+    color: var(--input-sub-text);
   }
   .footer-p {
     padding-block: 3.375rem;
