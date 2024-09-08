@@ -170,6 +170,7 @@ header .container .btn-dark-mode .switch .slider {
   background-color: var(--color-bg-toggle);
   transition: 0.4s;
   border-radius: 23px;
+  box-shadow: 0 8px 18px -8px rgba(99, 102, 241, 0.9019607843);
 }
 header .container .btn-dark-mode .switch .slider:before {
   position: absolute;
